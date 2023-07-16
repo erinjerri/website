@@ -6,7 +6,7 @@ import seo from '@payloadcms/plugin-seo'
 import type { GenerateTitle } from '@payloadcms/plugin-seo/types'
 import path from 'path'
 import { buildConfig } from 'payload/config'
-
+import FormSubmission from './collections/FormSubmission'
 import Categories from './collections/Categories'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
@@ -42,7 +42,7 @@ export default buildConfig({
     }),
   },
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
-  collections: [Users, Categories, Pages, Posts, Media],
+  collections: [Users, Categories, Pages, Posts, Media, FormSubmission],
   globals: [Header, Footer],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
