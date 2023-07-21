@@ -11,10 +11,12 @@ import Categories from './collections/Categories'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
 import { Posts } from './collections/Posts'
+import { Slug } from './collections/Slug'
 import Users from './collections/Users'
 import BeforeDashboard from './components/BeforeDashboard'
 import { Footer } from './globals/Footer'
 import { Header } from './globals/Header'
+import { slugField } from './fields/slug'
 
 const generateTitle: GenerateTitle = () => {
   return 'My Website'
@@ -42,7 +44,7 @@ export default buildConfig({
     }),
   },
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL,
-  collections: [Users, Categories, Pages, Posts, Media, FormSubmission],
+  collections: [Users, Categories, Pages, Posts, Media, FormSubmission, slugField],
   globals: [Header, Footer],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
